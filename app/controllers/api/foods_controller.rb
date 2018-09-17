@@ -1,6 +1,6 @@
 class Api::FoodsController < ApplicationController
 
-  before_action :set_food, ony: [:show, :update, :destroy]
+  before_action :set_food, only: [:show, :update, :destroy]
 
   def index
     render json: Food.all
@@ -13,7 +13,7 @@ class Api::FoodsController < ApplicationController
   def create
     food = Food.new(food_params)
 
-    if food.sav
+    if food.save
       render json: food
     else
       render json: food.errors, status: 422
@@ -34,7 +34,7 @@ class Api::FoodsController < ApplicationController
 
   private
     def set_food
-      @food = Food.find(params[id])
+      @food = Food.find(params[:id])
     end
 
     def food_params
