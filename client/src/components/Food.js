@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Form from './Form'
+import { Button } from 'semantic-ui-react'
 
 class Food extends React.Component {
     state = { food: {}, edit: false }
@@ -40,7 +41,7 @@ class Food extends React.Component {
         return (
             <div>
                 { edit ? this.edit() : this.show() }
-                <button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit' }</button>
+                <Button primary size="small" onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit' }</Button>
             </div>    
         )
     }

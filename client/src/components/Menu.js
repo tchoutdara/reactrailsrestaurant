@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Form from './Form'
+import { Button } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 
 class Menu extends React.Component {
   state = { foods: [], showForm: false }
@@ -50,10 +52,12 @@ class Menu extends React.Component {
     const { showForm } = this.state
     return (
       <div>
-        <h2>Foods</h2>
-        <button onClick={this.toggleForm}>
-          { showForm ? 'Hide' : 'Show' }
-        </button>
+        <Header as='h2' color='purple'>
+            React Restaurant Foods!!!
+         </Header>
+        <Button primary size="small" onClick={this.toggleForm}>
+          { showForm ? 'Hide' : 'Add to Menu' }
+        </Button>
         { showForm ? this.form() : this.show() }
       </div>
     )

@@ -9,6 +9,7 @@ import Menu from './components/Menu'
 import Food from './components/Food'
 import ProtectedRoute from './components/ProtectedRoute'
 
+
 const App = () => (
   <Fragment>
     <NavBar />
