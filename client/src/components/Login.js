@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react';
-import { login } from '../fakeAuth';
+import React, { Fragment } from 'react'
+import { login } from '../fakeAuth'
+import { Button } from 'semantic-ui-react'
+
 
 const Login = ({ history }) => (
   <Fragment>
-    <h3>Login</h3>
-    <button onClick={ () => {
+    <h2>Login</h2>
+    <Button primary onClick={ () => {
         login()
         history.push('/menu')
     }}>
         Login
-    </button>
+    </Button>
   </Fragment>
 )
 
